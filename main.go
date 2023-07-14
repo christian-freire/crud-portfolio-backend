@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "projetos-pessoais/crud-porfolio-backend/routes"
 
 func main() {
-	fmt.Println("Teste main")
+	routes.HandleRequests()
 }
