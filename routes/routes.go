@@ -9,6 +9,7 @@ import (
 func HandleRequests() {
 	r := gin.Default()
 	r.GET("/users", controllers.AllUsers)
+	r.GET("/users/:id", controllers.GetUserByID)
 	r.GET("/:name", controllers.HelloUser)
 	r.POST("/users", controllers.CreateUser)
 	r.Run()

@@ -1,10 +1,15 @@
 package controllers
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+	"projetos-pessoais/crud-porfolio-backend/database"
+	"projetos-pessoais/crud-porfolio-backend/models"
+
+	"github.com/gin-gonic/gin"
+)
 
 func AllUsers(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"id":   "1",
-		"name": "Chris",
-	})
+	var user []models.User
+	database.DB.Find(&user)
+	c.JSON(http.StatusOK, &user)
 }
